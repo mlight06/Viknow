@@ -8,12 +8,13 @@ body {
 }
 #header {
   display: flex;
-  justify-content: center;
-  border-radius: 3px;
-  border-style: groove;
-  font-size: 48px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+  justify-content: space-between;
+  border-radius: 6px;
+  border-color: aliceblue;
+  border-style: outset;
+  font-size: 86px;
+  color: #e59500;
+  font-family: 'Gwendolyn', cursive;
 }
 #welcome {
   display: flex;
@@ -21,22 +22,43 @@ body {
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 3%;
+  color: #ffaa00;
+  font-size: 20px;
+  font-family: 'Courgette', cursive;
+}
+#Bon {
+  display: flex;
+  justify-content: center;
+  color: #ffaa00;
+  font-size: 36px;
+  margin-top: 3%;
+  font-family: 'Gwendolyn', cursive;
+
 }
 #pickdish {
   display: flex;
   justify-content: center;
-  margin-top: 10%;
+  margin-top: 3%;
+  font-size: large;
+  color: #ffaa00;
+  font-family: 'Courgette', cursive;
 }
 #dropdown {
   display: flex;
   justify-content: center;
   margin-top: 2%;
-  background: transparent;
+
+}
+#dishType {
+  background-color: #4f000b;
+  color: #ffaa00;
 }
 #wine {
   display: flex;
   justify-content: center;
-  margin-top: 4%;
+  margin-top: 2%;
+  color: #ffaa00;
+  font-size: 20px;
 }
 /* #winebox {
   display: flex;
@@ -45,4 +67,31 @@ body {
 #characteristics {
   display: flex;
   justify-content: center;
+  color:#ffaa00;
+  font-size: 16px;
 }
+#grapes {
+  width: 100px;
+  height: auto;
+}
+#winephoto {
+  /* display: flex;
+  justify-content: center; */
+  width: 60%;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 10%;
+  margin-top: 1%;
+}
+#truesuggestion {
+  display: flex;
+  justify-content: center;
+  color: #ffaa00;
+  margin-top: 1%;
+}
+/* #owned {
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
+
+} */

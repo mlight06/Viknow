@@ -18,14 +18,14 @@ module.exports = {
         test: /\.(js|jsx|png|jpe?g)$/,
         exclude: /node_modules/,
         use: [
-          {
-            loader: 'file-loader?name=dist/[name].[ext]',
-            // options: {
-            //   name: '/dist/[name].ext',
-            // },
-            //   name: '/dist/[name].[ext]',
-            // },
-          },
+          // {
+          //   loader: 'file-loader?name=dist/[name].[ext]',
+          //   // options: {
+          //   //   name: '/dist/[name].ext',
+          //   // },
+          //   //   name: '/dist/[name].[ext]',
+          //   // },
+          // },
           // { loader: 'image-webpack-loader' },
           {
             loader: 'babel-loader',

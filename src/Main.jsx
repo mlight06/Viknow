@@ -8,27 +8,34 @@ export default function Main() {
   const [dishName, setDishName] = useState('');
   const [wineType, setWineType] = useState([]);
   const [dishSelected, setDishSelected] = useState(false);
+  const [suggestions, setSuggestions] = useState(0);
+  const [chosenDish, setChosenDish] = useState(false);
   function getWines(e) {
     setDishName(e.target.value);
     console.log('getwines', e.target.value);
     axios.get('/wines', { params: { dish: e.target.value } })
       .then((response) => {
         setDishSelected(true);
+        setChosenDish(true);
         setWineType(response.data.rows);
+        setSuggestions(response.data.rows.length);
       });
   }
 
   return (
     <div>
       <div id="header">
+        <img id="grapes" src="./images/grapes.jpeg" />
         Viknow
+        <img id="grapes" src="./images/grapes.jpeg" />
       </div>
       <div id="welcome">
-        Welcome! Viknow is an app designed to help you pick the perfect wine pairing based on
+        Welcome! Viknow is an app designed to help you pick the perfect wine based on
         a range of popular dishes. Simply select a dish type from the drop down below, and Viknow
         will pick the best wine to compliment your dish.
-        Bon Appétit!
+
       </div>
+      <div id="Bon">Bon Appétit!</div>
       <div id="pickdish">Pick a Dish</div>
       <div id="dropdown">
         {' '}
@@ -52,6 +59,21 @@ export default function Main() {
           <option value="Pastas">Pastas</option>
         </select>
       </div>
+      <div id="suggestion">
+        {chosenDish
+          ? (
+            <div id="truesuggestion">
+              Yum! Based on your selection of
+              {' '}
+              {dishName}
+              , we have
+              {' '}
+              {suggestions}
+              {' '}
+              suggestion(s) for you!
+            </div>
+          ) : null}
+      </div>
       <div>
         {dishSelected ? wineType.map((wine, index) => {
           const wineName = wine.type;
@@ -66,6 +88,7 @@ export default function Main() {
         })
           : null}
       </div>
+      {/* <div id="owned">An app created by Michael Light, December 2021</div> */}
     </div>
   );
 }
