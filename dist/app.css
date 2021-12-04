@@ -1,3 +1,48 @@
+body {
+  background-color: #4f000b;
+}
 #main {
-  background-color: #590d22;
+
+  background-color: #4f000b;
+  /* 590d22 */
+}
+#header {
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+  border-style: groove;
+  font-size: 48px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+#welcome {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 3%;
+}
+#pickdish {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+#dropdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  background: transparent;
+}
+#wine {
+  display: flex;
+  justify-content: center;
+  margin-top: 4%;
+}
+/* #winebox {
+  display: flex;
+  justify-content: center;
+} */
+#characteristics {
+  display: flex;
+  justify-content: center;
 }

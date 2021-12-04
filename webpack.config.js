@@ -15,24 +15,42 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)?/,
+        test: /\.(js|jsx|png|jpe?g)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              '@babel/preset-react',
-            ],
-            // plugins: [
-            //   ['@babel/plugin-transform-runtime',
-            //     {
-            //       regenerator: true,
-            //     },
-            //   ],
-            // ],
+        use: [
+          {
+            loader: 'file-loader?name=dist/[name].[ext]',
+            // options: {
+            //   name: '/dist/[name].ext',
+            // },
+            //   name: '/dist/[name].[ext]',
+            // },
           },
-        },
+          // { loader: 'image-webpack-loader' },
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                '@babel/preset-env',
+                '@babel/preset-react',
+              ],
+              // plugins: [
+              //   ['@babel/plugin-transform-runtime',
+              //     {
+              //       regenerator: true,
+              //     },
+              //   ],
+              // ],
+            },
+          },
+          // {
+          //   loader: 'url-loader',
+          //   options: {
+          //     limit: 10000,
+          //     name: 'dist/Hamburger/[name].[hash:8].[ext]',
+          //   },
+          // },
+        ],
       },
     ],
   },

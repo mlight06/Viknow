@@ -1,6 +1,7 @@
 /* eslint-disable react/function-component-definition */
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
+// import Hamburger from '../dist/Hamburger.png';
 
 export default function Main() {
   const [dishes, setDishes] = useState([]);
@@ -13,20 +14,26 @@ export default function Main() {
     axios.get('/wines', { params: { dish: e.target.value } })
       .then((response) => {
         setDishSelected(true);
-        console.log('getwinesresponse', response.data.rows);
         setWineType(response.data.rows);
       });
   }
 
   return (
     <div>
-      <div>
+      <div id="header">
         Viknow
       </div>
-      <div>
+      <div id="welcome">
+        Welcome! Viknow is an app designed to help you pick the perfect wine pairing based on
+        a range of popular dishes. Simply select a dish type from the drop down below, and Viknow
+        will pick the best wine to compliment your dish.
+        Bon Appétit!
+      </div>
+      <div id="pickdish">Pick a Dish</div>
+      <div id="dropdown">
         {' '}
-        Pick a Dish
         <select onChange={getWines} value={dishName} id="dishType">
+          <option value="Pick a dish">Pick a dish</option>
           <option value="Steak">Steak</option>
           <option value="Hamburger">Hamburger</option>
           <option value="Ribs">Ribs</option>
@@ -46,9 +53,17 @@ export default function Main() {
         </select>
       </div>
       <div>
-        {dishSelected ? wineType.map((wine) => (
-          <div>{wine.type}</div>
-        ))
+        {dishSelected ? wineType.map((wine, index) => {
+          const wineName = wine.type;
+          console.log(wine.type, wineName);
+          return (
+            <div key={index} id="winebox">
+              <div id="wine">{wine.type}</div>
+              <div id="characteristics">{wine.characteristics}</div>
+              <img id="winephoto" src={`./images/${dishName}_${wineName}.png`} />
+            </div>
+          );
+        })
           : null}
       </div>
     </div>

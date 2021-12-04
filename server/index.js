@@ -11,13 +11,11 @@ app.use(express.static(path.join(__dirname, '../dist')));
 app.use(express.json());
 app.get('/wines', (req, res) => {
   const { dish } = req.query;
-  console.log(dish);
-  pool.query('select type from wines where dish_id=(select id from dishes where dish= $1)', [dish], (err, data) => {
+  pool.query('select type, characteristics from wines where dish_id=(select id from dishes where dish= $1)', [dish], (err, data) => {
     if (err) {
       console.log('query err', err);
       res.sendStatus(400);
     } else {
-      console.log('query data', data.rows[0]);
       res.send(data);
     }
   });
