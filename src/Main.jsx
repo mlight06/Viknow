@@ -5,23 +5,28 @@ import axios from 'axios';
 export default function Main() {
   const [dishes, setDishes] = useState([]);
   const [dishName, setDishName] = useState('');
-  function getDishes() {
-    axios.get('/dishes')
+  const [wineType, setWineType] = useState([]);
+  const [dishSelected, setDishSelected] = useState(false);
+  function getWines(e) {
+    setDishName(e.target.value);
+    console.log('getwines', e.target.value);
+    axios.get('/wines', { params: { dish: e.target.value } })
       .then((response) => {
-        console.log(response);
-        setDishName(response);
+        setDishSelected(true);
+        console.log('getwinesresponse', response.data.rows);
+        setWineType(response.data.rows);
       });
   }
-  useEffect(() => {
-    getDishes();
-  }, []);
+
   return (
     <div>
       <div>
         Viknow
       </div>
       <div>
-        <select name="dishType" id="dishType">
+        {' '}
+        Pick a Dish
+        <select onChange={getWines} value={dishName} id="dishType">
           <option value="Steak">Steak</option>
           <option value="Hamburger">Hamburger</option>
           <option value="Ribs">Ribs</option>
@@ -39,6 +44,12 @@ export default function Main() {
           <option value="Vegetables">Vegetables</option>
           <option value="Pastas">Pastas</option>
         </select>
+      </div>
+      <div>
+        {dishSelected ? wineType.map((wine) => (
+          <div>{wine.type}</div>
+        ))
+          : null}
       </div>
     </div>
   );
