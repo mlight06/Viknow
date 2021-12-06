@@ -3,7 +3,7 @@ const axios = require('axios');
 const path = require('path');
 const pool = require('../database/index.js');
 
-const port = 3002;
+const port = 3002 || process.env.PORT;
 const app = express();
 // const router = require('./routes.js');
 app.use(express.static(path.join(__dirname, '../dist')));
