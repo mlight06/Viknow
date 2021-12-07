@@ -11,7 +11,7 @@ module.exports = {
     path: DIST_DIR,
   },
   devtool: 'source-map',
-  watch: true,
+  // watch: true,
   module: {
     rules: [
       {
