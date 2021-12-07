@@ -4,9 +4,8 @@ const path = require('path');
 const pool = require('../database/index.js');
 const environ = require('dotenv').config();
 
-const port = 3002 || process.env.PORT;
+const port = process.env.PORT || 3002;
 const app = express();
-// const router = require('./routes.js');
 app.use(express.static(path.join(__dirname, '../dist')));
 
 app.use(express.json());
