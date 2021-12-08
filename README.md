@@ -5,7 +5,7 @@ MVP Project
 Viknow is an MVP-based application. It will be able to persist data that is both imported, and input by the user. This is a solo project that was done in a 48 hour period.
 
 ## Description
-Viknow is a full stack application that will allow the user to select a protein that is the main staple of their dish. Based on the selection, the most palatable type of wine will be suggested to pair. Based on the type of wine suggested, Viknow will also suggest a value wine as well as high end wine of that type.
+Viknow is a full stack application that will allow the user to select from a wide, and ever growing database of dish types. Based on the selection, the most palatable type of wine(s) will be suggested to pair. A description of the selected wine will be provided to inform the user what to expect from such a wine.
 
 
 ## Installation
@@ -23,4 +23,7 @@ Viknow is a full stack application that will allow the user to select a protein 
 - [Express]
 - [Webpack]
 - [Babel]
+
+## Creator
+Michael Light
 
