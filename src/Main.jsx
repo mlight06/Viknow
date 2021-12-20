@@ -4,7 +4,6 @@ import axios from 'axios';
 // import Hamburger from '../dist/Hamburger.png';
 
 export default function Main() {
-  const [dishes, setDishes] = useState([]);
   const [dishName, setDishName] = useState('');
   const [wineType, setWineType] = useState([]);
   const [dishSelected, setDishSelected] = useState(false);
@@ -12,7 +11,6 @@ export default function Main() {
   const [chosenDish, setChosenDish] = useState(false);
   function getWines(e) {
     setDishName(e.target.value);
-    console.log('getwines', e.target.value);
     axios.get('/wines', { params: { dish: e.target.value } })
       .then((response) => {
         setDishSelected(true);
