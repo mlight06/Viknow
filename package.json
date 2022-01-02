@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mlight06/Viknow#readme",
   "dependencies": {
+    "@material-ui/core": "^4.12.3",
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
