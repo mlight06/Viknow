@@ -1,7 +1,6 @@
-/* eslint-disable react/function-component-definition */
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-// import Hamburger from '../dist/Hamburger.png';
+import { Box } from '@material-ui/core';
 
 export default function Main() {
   const [dishName, setDishName] = useState('');
@@ -60,28 +59,33 @@ export default function Main() {
       <div id="suggestion">
         {chosenDish
           ? (
-            <div id="truesuggestion">
-              Yum! Based on your selection of
-              {' '}
-              {dishName}
-              , we have
-              {' '}
-              {suggestions}
-              {' '}
-              suggestion(s) for you!
-            </div>
+            <Box>
+              <div id="truesuggestion">
+                Yum! Based on your selection of
+                {' '}
+                {dishName}
+                , we have
+                {' '}
+                {suggestions}
+                {' '}
+                suggestion(s) for you!
+              </div>
+            </Box>
           ) : null}
       </div>
       <div>
         {dishSelected ? wineType.map((wine, index) => {
           const wineName = wine.type;
-          console.log(wine.type, wineName);
           return (
+          // <Box
+          //   sx={{ width: 200 }}
+          // >
             <div key={index} id="winebox">
               <div id="wine">{wine.type}</div>
               <div id="characteristics">{wine.characteristics}</div>
               <img id="winephoto" src={`./images/${dishName}_${wineName}.png`} />
             </div>
+          /* </Box> */
           );
         })
           : null}
