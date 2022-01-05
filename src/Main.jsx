@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import { Box } from '@material-ui/core';
+import { Container, Box } from '@material-ui/core';
 
 export default function Main() {
   const [dishName, setDishName] = useState('');
@@ -21,11 +21,13 @@ export default function Main() {
 
   return (
     <div>
-      <div id="header">
-        <img id="grapes" src="./images/grapes.jpeg" />
-        Viknow
-        <img id="grapes" src="./images/grapes.jpeg" />
-      </div>
+      <Container>
+        <div id="header">
+          <img id="grapes" src="./images/grapes.jpeg" />
+          Viknow
+          <img id="grapes" src="./images/grapes.jpeg" />
+        </div>
+      </Container>
       <div id="welcome">
         Welcome! Viknow is an app designed to help you pick the perfect wine based on
         a range of popular dishes. Simply select a dish type from the drop down below, and Viknow
